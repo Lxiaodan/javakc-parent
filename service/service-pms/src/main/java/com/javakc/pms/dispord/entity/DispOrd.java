@@ -22,10 +22,9 @@ import java.util.Date;
 public class DispOrd {
     @Id
     @Column(name="id")
-    @GeneratedValue(generator = "generator.uuid")
-    @GenericGenerator(name = "generator.uuid",strategy = "uuid")
-    @ApiModelProperty(value = "主键，采用hibernate的uuid生成32位字符串")
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @ApiModelProperty(value = "主键")
+    private int id;
 
     @Column(name = "order_name")
     private String orderName;

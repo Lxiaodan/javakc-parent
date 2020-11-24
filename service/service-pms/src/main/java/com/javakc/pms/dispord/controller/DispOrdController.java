@@ -55,7 +55,7 @@ public class DispOrdController {
 
     @ApiOperation("根据调度指令库ID获取单条数据")
     @GetMapping("{dispOrdId}")
-    public APICODE getById(@PathVariable("dispOrdId") String dispOrdId){
+    public APICODE getById(@PathVariable("dispOrdId") int dispOrdId){
         DispOrd dispOrd = dispOrdService.getById(dispOrdId);
         return APICODE.OK().data("items",dispOrd);
     }
@@ -69,7 +69,7 @@ public class DispOrdController {
 
     @ApiOperation("删除 - 调度指令库")
     @DeleteMapping("{dispOrdId}")
-    public APICODE deleteDispOrd(@PathVariable("dispOrdId") String dispOrdId){
+    public APICODE deleteDispOrd(@PathVariable("dispOrdId") int dispOrdId){
         dispOrdService.removeById(dispOrdId);
         return APICODE.OK();
     }
